@@ -15,7 +15,7 @@ resource "aws_lb" "application_elb" {
 }
 
 resource "aws_lb_listener" "front_end" {
-  load_balancer_arn = aws_lb.application_elb.id
+  load_balancer_arn = aws_lb.application_elb.arn
   port              = var.port
   protocol          = "HTTP"
 
