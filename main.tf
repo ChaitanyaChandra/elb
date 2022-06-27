@@ -11,6 +11,7 @@ resource "aws_lb" "application_elb" {
   #    prefix  = "test-lb"
   #    enabled = true
   #  }
+  tags = var.local_tags
 }
 
 resource "aws_lb_listener" "front_end" {
@@ -22,4 +23,5 @@ resource "aws_lb_listener" "front_end" {
     type             = "forward"
     target_group_arn = var.target_group_arn
   }
+  tags = var.local_tags
 }
